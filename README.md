@@ -12,7 +12,14 @@ nvm use node@latest
 
 once clone this project and cd into the project folder, please run:
 yarn / yarn install 
+
+open `.env.example`, copy and paste all variable into local `.env`
+variables can be found at `original code test folder / aws-exports.js`
+
+then run:
 yarn start
+
+open: http://localhost:3000 in browser.
 
 if you want to run test, please run:
 yarn test --watchAll=false (it is due to the project is a git repo)
