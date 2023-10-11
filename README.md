@@ -31,6 +31,11 @@ Approach of the solution:
    4. `fetch` should wrapped inside a useCallback, it only depends on query. At this point, query is static, so `fetch` should always be the same function.
    5. Users filter should be wrapped inside a useMemo with dependency `users` and `userType`. If these two dependencies don't change, filtered users should always reman the same.
    6. `renderHook` from '@testing-library/react-hooks' is not supported in React18. I will use `renderHook` from '@testing-library/react@alpha(13)'. It should be fine.
+6. Data fetching finished. Back to UI `UserContent`
+   1. `Header` should be dynamic depends on `userType` state (Admin users or Manager users).
+   2. Inside `UserContent`, I will use `UserCard` to render each user.
+   3. Inside `UserContent`, I will use `useFilteredUsers` to fetch and get users.
+   4. A util function `convertToSentenceCase` will be used to convert `userType` to sentence case.
 
 
 
