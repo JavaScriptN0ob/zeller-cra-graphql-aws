@@ -20,6 +20,17 @@ Approach of the solution:
    1. Divider will be my first component, it shows up at the first row.
    2. Header will be the next one, that's the first component I would like to use inside UserType.
    3. Radio will be the third one, it should live inside UserType folder.
+4. Top part is done. Now working on the data fetching part. I will use `AWS amplify` to connect to aws and fetch through graphql.
+   1. First of all, I'll use dotenv to save aws configs.
+   2. graphql schema is in the `src/graphql` folder.
+   3. I think the best practise of configuring aws amplify with configs is inside `index.ts`.
+5. Starting with data fetching. I always prefer to build a custom hook to deal with data fetching. The hook will extract from UI component, it will improve readability and reduce maintain cost.
+   1. It fetches data with graphql
+   2. It cleans up the data, filter data with `userType` and return the data to `UserContent`.
+   3. I need some mock data for testing, in this case I will use real data from aws.
+   4. `fetch` should wrapped inside a useCallback, it only depends on query. At this point, query is static, so `fetch` should always be the same function.
+   5. Users filter should be wrapped inside a useMemo with dependency `users` and `userType`. If these two dependencies don't change, filtered users should always reman the same.
+   6. `renderHook` from '@testing-library/react-hooks' is not supported in React18. I will use `renderHook` from '@testing-library/react@alpha(13)'. It should be fine.
 
 
 
@@ -31,3 +42,4 @@ UI structure:
       >>UserType
       >>> setUserType called here, change the state inside UserPage.
       >>UserContent
+      >>> `useFilteredUsers` called here, it will fetch graphql data and filter the data with `userType` state.
