@@ -1,6 +1,27 @@
 Zeller Frontend developer code test
 Author: Wayne
 
+```javascript
+This code test is created by Create React App with Typescript template.
+Please run following CLIs to play with this project:
+
+please use node version@latest(18)
+
+nvm install node@latest
+nvm use node@latest
+
+once clone this project and cd into the project folder, please run:
+yarn / yarn install 
+yarn start
+
+if you want to run test, please run:
+yarn test --watchAll=false (it is due to the project is a git repo)
+
+or if you want to see the coverage, please run:
+yarn test:coverage
+
+```
+
 Requirement can be found: [requirement.pdf](./assets/Frontend-Coding-Challenge.pdf)
 It should look like [link of the image](./assets/zeller-customers-design.png)
 
@@ -36,15 +57,23 @@ Approach of the solution:
    2. Inside `UserContent`, I will use `UserCard` to render each user.
    3. Inside `UserContent`, I will use `useFilteredUsers` to fetch and get users.
    4. A util function `convertToSentenceCase` will be used to convert `userType` to sentence case.
-
-
-
-
-
-UI structure:
+7. UI structure:
    >UserPage
    >`radio state lives here, default ADMIN`
-      >>UserType
+      >> UserType
       >>> setUserType called here, change the state inside UserPage.
-      >>UserContent
+
+      >> UserContent
       >>> `useFilteredUsers` called here, it will fetch graphql data and filter the data with `userType` state.
+
+
+In case you don't have time to run the project, here are some screenshots:
+screenshot of the UI(browser):
+![screenshot of the UI(browser)](./assets/screenshots/browser-UI.png)
+
+screenshot of the UI(responsive - mobile):
+![screenshot of the UI(responsive - mobile)](./assets/screenshots/responsive-mobile-UI.png)
+
+screenshot of the test coverage:
+![test coverage](./assets/screenshots/test-coverage.png)
+
