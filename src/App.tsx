@@ -3,7 +3,7 @@ import UserPage from './pages/UserPage';
 
 const App = () => {
   return (
-    <div className="App">
+    <div data-testid="GLOBAL_CSS" className="App">
       <UserPage />
     </div>
   );
