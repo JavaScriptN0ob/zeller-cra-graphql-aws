@@ -7,7 +7,6 @@
     "airbnb",
     "airbnb/hooks",
     "airbnb-typescript",
-    "plugin:react/recommended",
     "plugin:prettier/recommended"
   ],
   "parserOptions": {
@@ -15,7 +14,13 @@
   },
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "no-restricted-exports": "off"
+    "no-restricted-exports": "off",
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function"
+      }
+    ]
   },
   "ignorePatterns":[
     "aws-exports.js"
