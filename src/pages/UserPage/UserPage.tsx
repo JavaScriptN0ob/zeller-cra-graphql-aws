@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import Divider from '../../components/Divider';
 import UserType from '../../components/UserType';
+import UserContent from '../../components/UserContent';
 
 const Container = styled.div`
   padding: 10px;
@@ -17,7 +18,7 @@ const UserPage = () => {
       <Divider margin="0 0 30px 0" />
       <UserType userType={userType} setUserType={setUserType} />
       <Divider margin="30px 0" />
-      UserContent
+      <UserContent userType={userType} />
       <Divider margin="30px 0 0 0" />
     </Container>
   );
