@@ -16,3 +16,18 @@ Approach of the solution:
       1. radio-box activated background color: #e8f2fb (also used in the avatar background)
       2. There are 3 dividers color: #f3f5f9
       3. font is special, I might need to import a font. (I found a free font called `Kalypsa`, but unfortunately, only medium size is free. I will put it in the public/font)
+3. currently working on the UI, I will use `styled-components` to build the UI. Due to project is TS based, types/SC need to be installed on dev-dependency too.
+   1. Divider will be my first component, it shows up at the first row.
+   2. Header will be the next one, that's the first component I would like to use inside UserType.
+   3. Radio will be the third one, it should live inside UserType folder.
+
+
+
+
+
+UI structure:
+   >UserPage
+   >`radio state lives here, default ADMIN`
+      >>UserType
+      >>> setUserType called here, change the state inside UserPage.
+      >>UserContent
